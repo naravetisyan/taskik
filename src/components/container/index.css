@@ -1,0 +1,11 @@
+.container {
+    max-width: 350px !important;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin: 0 30px;
+    overflow: auto;
+    padding: 25px;
+    border: 1px solid #b9b9b9;
+}

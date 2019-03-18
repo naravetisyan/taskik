@@ -1,0 +1,11 @@
+.list-item{
+    padding: 6px 0;
+}
+.list {
+    height: 400px;
+    min-width: 300px;
+    overflow: auto;
+}
+.changeable {
+    margin-right: 10px; 
+}
