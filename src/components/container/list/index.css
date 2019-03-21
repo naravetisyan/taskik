@@ -9,3 +9,7 @@
 .changeable {
     margin-right: 10px; 
 }
+.div-item {
+    display: inline-block;
+    cursor: pointer;
+}

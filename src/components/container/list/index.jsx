@@ -22,8 +22,14 @@ class List extends Component {
         this.setState({open: null})
     }
 
+    removeItem = (type, i) => {
+        this.setState({open: null}, () => {
+            this.props.removeItem(type,i)
+        })
+    }
+
     render() {
-        let { listArr, type, removeItem } = this.props;
+        let { listArr, type } = this.props;
         return (
             <div className='list'>
                 {listArr && listArr.map((item,i) => {
@@ -45,9 +51,17 @@ class List extends Component {
                                         </Button>
                                     </Fragment>
                                 ) : 
-                                (<Label size='huge' onClick={() => this.setState({open: i, inputVal: item})}>
-                                    {item}
-                                    <Icon name='delete' onClick={() => removeItem(type, i)}/>
+                                (<Label size='huge'>
+                                    <div 
+                                        className="div-item"
+                                        onClick={() => this.setState({open: i, inputVal: item})}>
+                                        {item}
+                                    </div>
+                                    <Icon                                         
+                                        name='delete' 
+                                        className="delete" 
+                                        onClick={ () => this.removeItem(type, i) }
+                                    />
                                 </Label>)
                             }
                         </div>
